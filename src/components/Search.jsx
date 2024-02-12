@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
-const Search = ({pokemonSearch, setPokemonSearch, pokemonInfo, setPokemonInfo}) => {
+const Search = ({pokemonSearch, setPokemonSearch, pokemonInfo, setPokemonInfo, pokemonError, setPokemonError}) => {
 
     const changeHandler = (e) => {
         setPokemonSearch(e.target.value.toLowerCase())
@@ -13,6 +14,7 @@ const Search = ({pokemonSearch, setPokemonSearch, pokemonInfo, setPokemonInfo}) 
             .get(`https://pokeapi.co/api/v2/pokemon/${pokemonSearch}`)
             .then((res) => {
                 console.log(res)
+                setPokemonError(false)
                 setPokemonInfo({
                     name: res.data.name.charAt(0).toUpperCase() + res.data.name.slice(1),
                     sprite: res.data.sprites.front_default,
@@ -25,6 +27,8 @@ const Search = ({pokemonSearch, setPokemonSearch, pokemonInfo, setPokemonInfo}) 
             })
             .catch((err) => {
                 console.log(err)
+                setPokemonInfo(null)
+                setPokemonError(true)
             })
     }
 
@@ -36,6 +40,9 @@ const Search = ({pokemonSearch, setPokemonSearch, pokemonInfo, setPokemonInfo}) 
                     <input className='border border-black p-2 rounded-xl h-10' onChange={changeHandler} placeholder='Pokemon Name' type="text" name="pokemon"/>
                     <button className='bg-red-500 text-white p-3 rounded-xl hover:bg-red-600 h-10 flex justify-center items-center' type="submit">Search</button>
                 </div>
+                {
+                    pokemonError ? <p className='mt-4 text-red-500'>Pokemon not Found, check spelling!</p> : null
+                }
             </form>
 
         </div>

@@ -15,7 +15,7 @@ function App() {
     <div className="min-h-screen bg-slate-100 p-6">
       <Search pokemonSearch={pokemonSearch} setPokemonSearch={setPokemonSearch} pokemonInfo={pokemonInfo} setPokemonInfo={setPokemonInfo} pokemonError={pokemonError} setPokemonError={setPokemonError} />
       <Routes>
-        <Route path='/' element={pokemonInfo && <Display pokemonInfo={pokemonInfo}/>} />
+        <Route path='/' element={pokemonInfo && <Display pokemonInfo={pokemonInfo} setPokemonInfo={setPokemonInfo}/>} />
         {/* <Route path='/moreInfo/:pokemon' element={<MoreInfo />} /> */}
       </Routes>
     </div>

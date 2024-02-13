@@ -17,12 +17,13 @@ const Search = ({pokemonSearch, setPokemonSearch, pokemonInfo, setPokemonInfo, p
                 setPokemonError(false)
                 setPokemonInfo({
                     name: res.data.name.charAt(0).toUpperCase() + res.data.name.slice(1),
-                    sprite: res.data.sprites.front_default,
+                    sprites: res.data.sprites,
                     types: res.data.types,
                     baseExperience: res.data.base_experience,
                     abilities: res.data.abilities,
                     height: res.data.height,
-                    weight: res.data.weight
+                    weight: res.data.weight,
+                    shiny: false
                 })
             })
             .catch((err) => {

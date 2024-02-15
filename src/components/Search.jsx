@@ -34,7 +34,7 @@ const Search = ({pokemonSearch, setPokemonSearch, pokemonInfo, setPokemonInfo, p
     }
 
     return(
-        <div className='flex flex-col items-center space-y-8'>
+        <div className='flex flex-col items-center space-y-4'>
             <img className='w-[300px] rounded-lg' src='/images/_0455b9f5-1e62-46f0-b8fb-28bdd3720f47.jpg' alt="Pokenfo Logo" />
             <form onSubmit={submitHandler}>
                 <div className='flex justify-center items-center space-x-3'>

@@ -8,7 +8,7 @@ const Display = ({pokemonInfo, setPokemonInfo}) => {
     }
 
     return(
-        <div className='mt-8'>
+        <div className='mt-4'>
             <div className='flex items-center justify-center'>
                 {/* <Link to={`/moreInfo/${pokemonInfo.name}`}> */}
                     <div className='flex flex-col items-center space-y-3 bg-white p-10 rounded-2xl shadow-2xl'>

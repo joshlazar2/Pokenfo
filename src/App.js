@@ -12,7 +12,7 @@ function App() {
   const [pokemonError, setPokemonError] = useState(false)
 
   return (
-    <div className="min-h-screen bg-slate-100 p-6">
+    <div className="min-h-screen bg-slate-100 p-4">
       <Search pokemonSearch={pokemonSearch} setPokemonSearch={setPokemonSearch} pokemonInfo={pokemonInfo} setPokemonInfo={setPokemonInfo} pokemonError={pokemonError} setPokemonError={setPokemonError} />
       <Routes>
         <Route path='/' element={pokemonInfo && <Display pokemonInfo={pokemonInfo} setPokemonInfo={setPokemonInfo}/>} />
